@@ -9,7 +9,7 @@
 }
 
 .row1{
-  min-width: 500px;
+  min-width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +19,7 @@
 
 .row2{
   margin-top: 15px;
-  min-width: 700px;
+  min-width: 60%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -44,4 +44,19 @@
 #weatherhoy{
   margin-top: -45px;
   margin-bottom: 15px;
+}
+
+.future > p{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+ .row2{
+  flex-direction: column;
+ }
+
+ .future{
+  margin-bottom: 15px;
+ }
 }

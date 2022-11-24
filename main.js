@@ -4,15 +4,9 @@ import { setupCounter } from './counter.js'
 
 document.getElementById('ciudad').addEventListener('input', setWeather)
 
-function setWeather(){
-  let ciudad = document.getElementById("ciudad").value
-  let yourDate = new Date()
-  var year = yourDate.toLocaleString("default", { year: "numeric" });
-  var month = yourDate.toLocaleString("default", { month: "2-digit" });
-  var day = yourDate.toLocaleString("default", { day: "2-digit" });
-  yourDate=year + "-" + month + "-" + day;
-  console.log(yourDate)
-  fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q='+ciudad+'&days=4', options)
+function setWeather(event){
+  const ciudad = event.target.value
+  fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${ciudad}&days=4`, options)
 	.then(response => response.json())
 	.then(response => {
     console.log(response)
